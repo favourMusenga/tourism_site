@@ -1,0 +1,373 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,900;1,400;1,700&display=swap');
+
+:root {
+	--primary-color: #2e7d32;
+	--secondary-color: #00e676;
+	--text-primary: #000;
+	--text-secondary: #fff;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 16px;
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+	line-height: 1.6;
+}
+
+.header-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 0.8rem 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 1000;
+	color: var(--text-primary);
+	background-color: var(--text-secondary);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+	font-size: clamp(1rem, 5vw, 2rem);
+	text-transform: uppercase;
+	flex: 1;
+}
+
+.nav-container {
+	flex: 1.8;
+	display: flex;
+	justify-content: space-between;
+}
+
+.nav,
+.secondary-nav {
+	list-style: none;
+	display: flex;
+	align-items: center;
+}
+
+.nav-item,
+.secondary-nav-item {
+	margin-right: 0.8rem;
+}
+
+.nav-item a,
+.secondary-nav-item a {
+	text-decoration: none;
+	color: inherit;
+	font-size: 1rem;
+	text-transform: uppercase;
+}
+
+.nav-item a:hover {
+	color: var(--primary-color);
+	font-size: 1.2rem;
+}
+
+.nav-item-active {
+	font-weight: 900;
+	text-decoration: underline;
+	color: var(--secondary-color);
+}
+
+.nav-item-active:hover {
+	color: var(--primary-color);
+}
+
+.btn {
+	padding: 0.5rem;
+	border-radius: 1.2rem;
+	text-align: center;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.btn-primary {
+	background-color: var(--primary-color);
+	color: var(--text-secondary);
+}
+
+.btn-secondary {
+	background-color: var(--secondary-color);
+	color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+	filter: brightness(0.85);
+	cursor: pointer;
+}
+
+.btn-primary:hover {
+	filter: brightness(1.25);
+	cursor: pointer;
+}
+
+.btn-outline-primary {
+	border: 2px solid var(--secondary-color);
+}
+
+.btn-outline-primary:hover {
+	background-color: var(--secondary-color);
+	color: var(--text-primary);
+	cursor: pointer;
+}
+
+.open-nav,
+.close-nav {
+	display: none;
+}
+
+.container {
+	padding: 0rem 1.5rem;
+}
+
+/****** the home page css *****/
+
+.home-header {
+	color: var(--text-secondary);
+	background-color: transparent;
+	box-shadow: none;
+}
+
+.hero-section {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #161616;
+	color: var(--text-secondary);
+}
+
+.hero-section video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0.8;
+}
+
+.text {
+	position: relative;
+	z-index: 20;
+	font-family: 'Poppins', Arial, Helvetica, sans-serif;
+	font-style: italic;
+	padding: 0 1rem;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #222;
+	mix-blend-mode: overlay;
+}
+
+.text-title {
+	font-size: clamp(2rem, 5vw, 3.5rem);
+	text-align: center;
+}
+
+.text-details {
+	font-size: clamp(0.8rem, 3vw, 1.5rem);
+	text-align: center;
+}
+
+@media screen and (max-width: 920px) {
+	.nav-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: var(--text-secondary);
+		color: var(--text-primary);
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		z-index: 100;
+		display: none;
+	}
+
+	.nav,
+	.secondary-nav {
+		display: block;
+		margin-bottom: 2rem;
+	}
+
+	.nav-item,
+	.secondary-nav-item {
+		margin-bottom: 0.8rem;
+	}
+
+	.nav-item a {
+		font-size: 1.2rem;
+	}
+
+	.nav-item a:hover {
+		font-size: 1.2rem;
+	}
+
+	.close-nav {
+		display: block;
+		position: absolute;
+		top: 30px;
+		right: 30px;
+		font-size: 2.5rem;
+		cursor: pointer;
+	}
+
+	.open-nav {
+		font-size: clamp(1.8rem, 5vw, 2.5rem);
+		display: block;
+		cursor: pointer;
+	}
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 1.5rem 0rem;
+	gap: 2rem;
+}
+
+.col {
+	flex: 1;
+	height: 20rem;
+}
+
+.competition {
+	background-color: #212121;
+	color: var(--text-secondary);
+}
+
+.place-image {
+	width: 100%;
+	height: 100%;
+}
+
+.place-summary,
+.competition-summary {
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.place-summary-title,
+.competition-title {
+	margin-bottom: 1.1rem;
+	font-size: clamp(1.5rem, 5vw, 2rem);
+	text-transform: uppercase;
+	text-decoration: underline;
+	text-align: center;
+}
+
+.place-summary-text,
+.competition-text {
+	font-size: clamp(0.9rem, 2vw, 1.15rem);
+}
+
+.place-action-btn {
+	align-self: flex-start;
+	margin-top: 1.1rem;
+}
+
+#img-slide-show {
+	width: 100%;
+	height: 100%;
+}
+
+@media screen and (max-width: 780px) {
+	.row {
+		flex-direction: column;
+		border-bottom: 1px #222 solid;
+	}
+
+	.place-action-btn {
+		align-self: center;
+	}
+	.col {
+		width: 100%;
+	}
+
+	.places-container .row:first-of-type .col:first-of-type {
+		order: 1;
+	}
+
+	.places-container .row:last-of-type .col:first-of-type {
+		order: 1;
+	}
+	.row:last-of-type {
+		border-bottom: none;
+	}
+}
+
+.split-view {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.image-view {
+	position: relative;
+}
+
+.image-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.image-view-text {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 50;
+	font-family: 'Poppins', Arial, Helvetica, sans-serif;
+	width: 100%;
+	height: 100%;
+	display: grid;
+	place-content: center;
+	padding: 3rem 1.5rem;
+	color: var(--text-secondary);
+}
+
+.image-view-text-title {
+	font-size: clamp(2rem, 5vw, 3.3rem);
+	text-transform: uppercase;
+}
+
+.image-container img {
+	width: 100%;
+	height: 100%;
+}
+.details-view {
+	padding: 6.6rem 4rem;
+	overflow: auto;
+}
+
+.text-black {
+	color: var(--text-primary);
+}
